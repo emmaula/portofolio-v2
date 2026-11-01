@@ -1,9 +1,9 @@
+
 import Link from "next/link";
 
 export default function NotFound() {
   return (
     <main className="flex min-h-[calc(100vh-72px-72px)] flex-col items-center justify-center bg-[#f0f8ed] px-5 text-center">
-
       <h1 className="text-7xl font-extrabold text-red-700">
         404
       </h1>
@@ -19,11 +19,10 @@ export default function NotFound() {
 
       <Link
         href="/"
-        className="mt-7 rounded-lg bg-[#10263d] px-6 py-3 font-semibold text-white shadow-md hover:bg-[#203b60]"
+        className="mt-7 rounded-lg bg-[#10263d] px-6 py-3 font-semibold text-white shadow-md"
       >
         Kembali ke Beranda
       </Link>
-
     </main>
   );
 }
