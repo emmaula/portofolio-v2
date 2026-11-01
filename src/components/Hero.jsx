@@ -1,4 +1,3 @@
-
 export default function Hero({ nama, tagline }) {
   return (
     <section className="flex flex-col items-center gap-6 py-3 sm:flex-row sm:gap-7">
@@ -10,11 +9,11 @@ export default function Hero({ nama, tagline }) {
 
       <div className="flex-1">
         <h1 className="text-4xl font-bold leading-tight tracking-tight text-[#203b60] sm:text-5xl">
-          Halo, saya {nama}!
+          Halo, saya Emmaula Anggraeni Wijaya{nama}!
         </h1>
 
         <p className="mt-3 text-base leading-7 text-[#203b60]">
-          {tagline}
+          Siswi kelas X SMK, calon Web Developer di Kelas Industri UBIG.{tagline}
         </p>
 
         <nav className="mt-5 flex flex-wrap gap-3">
