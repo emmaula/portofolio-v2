@@ -29,7 +29,7 @@ export default function FormKontakPage() {
           <ul className="mt-3 space-y-3">
             <li>
               <a
-                href="https://github.com/"
+                href="https://github.com/emmaula"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="break-all text-sm text-aksen hover:underline focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aksen dark:text-red-400"
