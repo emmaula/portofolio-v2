@@ -1,7 +1,7 @@
 "use client"; 
 
 import { useState } from "react"; 
-import ProyekCard from "@/components/ProyekCard"; 
+import ProyekCard from "@/components/ProyekCard-temp"; 
 
 const daftarKategori = ["Semua", "HTML", "CSS", "Javascript", "Next.js"];
 const tombolBiasa = "rounded-full border border-utama dark:border-sky-200 px-4 py-1 text-sm font-semibold text-utama dark:text-sky-200";
