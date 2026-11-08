@@ -1,91 +1,97 @@
+import Image from "next/image";
 
-import Kartu from "@/components/Kartu";
-import SkillCard from "@/components/SkillCard";
-
-const skills = [
-  { nama: "HTML", level: "Menengah" },
-  { nama: "CSS", level: "Menengah" },
-  { nama: "Git dan GitHub", level: "Dasar" },
-  { nama: "Desain poster dengan Canva", level: "Mahir" },
-  { nama: "JavaScript", level: "Dasar" },
-];
+export const metadata = {
+  title: "Tentang",
+  // 1. Mengubah deskripsi metadata menjadi nama Anda (Andi Pratama)
+  description: "Cerita, hobi, cita-cita, dan jadwal belajar Andi Pratama.",
+};
 
 export default function Tentang() {
-  return (
-    <main className="min-h-screen bg-[#f0f8ed] font-sans text-[#203b60]">
-      <div className="mx-auto max-w-4xl space-y-6 px-5 py-12">
-        <h1 className="text-3xl font-bold">Tentang Saya</h1>
 
-        <Kartu judul="Perkenalan">
-          Saya adalah siswi Rekayasa Perangkat Lunak di SMKN 1
-          Kepanjen dan senang mencoba hal baru di dunia teknologi.
-          Saya ingin mengembangkan kemampuan membuat website
-          yang bermanfaat.
-        </Kartu>
+  const jadwalBelajar = [
+    { hari: "Senin", waktu: "19.00 - 20.00", kegiatan: "Membaca ulang modul" },
+    { hari: "Selasa", waktu: "19.00 - 21.00", kegiatan: "Mengerjakan tugas praktik" },
+    { hari: "Rabu", waktu: "19.30 - 20.30", kegiatan: "Merekam video dan menulis laporan" },
+  ];
+  
+ return (
+   // 2. Ditambahkan class "space-y-6" pada tag <main> agar setiap section otomatis memiliki jarak vertikal yang rapi dan konsisten
+   <main className="mx-auto max-w-5xl px-4 py-10 space-y-6">
+     
+     <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">Perkenalan</h1>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <Kartu judul="Hobi">
-            <ul className="list-inside list-disc space-y-1">
-              <li>Memasak</li>
-              <li>Belajar pemrograman</li>
-              <li>Mengembangkan website</li>
-            </ul>
-          </Kartu>
+     {/* Section 2: Tentang Saya */}
+     <section id="tentang-saya" className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 scroll-mt-6">
+       <div className="flex flex-col items-center gap-6 sm:flex-row">
+         <Image
+           src="/image.png"
+           alt="Foto profil saya"
+           width={240}
+           height={240}
+           className="h-40 w-40 shrink-0 rounded-full border-4 border-red-600 object-cover object-[65%_center]"
+         />
+         <div>
+           <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3">Tentang Saya</h2>
+           <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">
+             Saya tinggal di Malang dan senang mencoba hal baru di dunia teknologi. Saya ingin bisa membuat website yang bermanfaat untuk sekolah dan UMKM di sekitar rumah.
+           </p>
+         </div>
+       </div>
+     </section>
 
-          <Kartu judul="Cita-cita">
-            Menjadi <strong>Full Stack Web Developer</strong>.
-            Langkah yang saya rencanakan:
-            <ol className="mt-2 list-inside list-decimal space-y-1">
-              <li>Mempelajari pemrograman secara konsisten</li>
-              <li>Membuat proyek website</li>
-              <li>Mengembangkan kemampuan web development</li>
-            </ol>
-          </Kartu>
-        </div>
+     {/* Section 3 & 4: Hobi & Cita-Cita Grid */}
+     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+       
+       {/* Hobi - Diubah menggunakan list-disc biasa agar tanda bullet poin tidak menabrak teks */}
+       <section className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+         <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">Hobi</h2>
+         <ul className="list-disc pl-5 text-gray-600 dark:text-gray-400 text-sm md:text-base space-y-2">
+           <li>Berkebun</li>
+           <li>Membaca Buku</li>
+           <li>Mendesain poster</li>
+         </ul>
+       </section>
 
-        <Kartu judul="Keahlian">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {skills.map((skill) => (
-              <SkillCard
-                key={skill.nama}
-                nama={skill.nama}
-                level={skill.level}
-              />
-            ))}
-          </div>
-        </Kartu>
+       {/* Cita-Cita */}
+       <section className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+         <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3">Cita-cita</h2>
+         <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base mb-3">
+           Menjadi <span className="font-bold text-gray-800 dark:text-gray-100">Full Stack Web Developer</span>. Langkah yang saya rencanakan:
+         </p>
+         <ol className="list-decimal pl-5 text-gray-600 dark:text-gray-400 text-sm md:text-base space-y-2">
+           <li>Menuntaskan Kelas Industri UBIG sampai tuntas</li>
+           <li>Magang di perusahaan teknologi</li>
+           <li>Bekerja sebagai Web Developer</li>
+         </ol>
+       </section>
+     </div>
 
-        <Kartu judul="Jadwal Belajar">
-          <div className="overflow-x-auto">
-            <table className="w-full overflow-hidden rounded-lg text-left">
-              <thead className="bg-[#243f8b] text-white">
-                <tr>
-                  <th className="p-3">Hari</th>
-                  <th className="p-3">Waktu</th>
-                  <th className="p-3">Kegiatan</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white">
-                <tr className="border-b border-slate-100">
-                  <td className="p-3">Senin</td>
-                  <td className="p-3">19.00–20.00</td>
-                  <td className="p-3">Membaca ulang modul</td>
-                </tr>
-                <tr className="border-b border-slate-100">
-                  <td className="p-3">Selasa</td>
-                  <td className="p-3">19.00–21.00</td>
-                  <td className="p-3">Mengerjakan tugas praktik</td>
-                </tr>
-                <tr>
-                  <td className="p-3">Rabu</td>
-                  <td className="p-3">19.30–20.30</td>
-                  <td className="p-3">Merekam video dan menulis laporan</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </Kartu>
-      </div>
-    </main>
-  );
+     {/* Section 6: Jadwal Belajar */}
+     <section className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+       <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-5">Jadwal Belajar</h2>
+       <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
+         <table className="w-full text-left border-collapse text-sm md:text-base">
+           <thead>
+             {/* Mengganti warna bg menjadi bg-[#0d233a] agar selaras dengan tema Navbar utama */}
+             <tr className="bg-[#0d233a] text-white">
+               <th className="p-4 font-semibold">Hari</th>
+               <th className="p-4 font-semibold">Waktu</th>
+               <th className="p-4 font-semibold">Kegiatan</th>
+             </tr>
+           </thead>
+           <tbody className="text-gray-600 dark:text-gray-400 divide-y divide-gray-200 dark:divide-gray-700">
+             {jadwalBelajar.map((item, index) => (
+               <tr key={index} className="hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors">
+                 <td className="p-4 font-medium">{item.hari}</td>
+                 <td className="p-4">{item.waktu}</td>
+                 <td className="p-4">{item.kegiatan}</td>
+               </tr>
+             ))}
+           </tbody>
+         </table>
+       </div>
+     </section>
+
+   </main>
+ );
 }

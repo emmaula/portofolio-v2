@@ -1,13 +1,13 @@
-export default function Kartu({ judul, children }) {
+export default function Kartu({ judul, id, children }) {
   return (
-    <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="mb-4 text-xl font-bold text-[#203b60]">
+    <section
+      id={id}
+      className="rounded-xl border border-slate-100 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+    >
+      <h2 className="mb-4 text-xl font-bold text-utama dark:text-sky-200">
         {judul}
       </h2>
-
-      <div className="text-[15px] leading-6 text-[#405675]">
-        {children}
-      </div>
+      {children}
     </section>
   );
 }
