@@ -5,8 +5,19 @@ import SkillCard from "@/components/SkillCard";
 import { buttonVariants } from "@/components/ui/button";
 import { proyek } from "@/data/proyek";
 import { keahlian } from "@/data/keahlian";
+import { supabase } from "@/supabase";
   
-export default function Home() {
+export default async function Home() {
+  const { data: skills } = await supabase
+    .from("skills")
+    .select("*")
+    .order("id");
+  const { data: proyekTerbaru } = await supabase
+    .from("projects")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(3);
+
   return (
     <main className="mx-auto w-full max-w-6xl space-y-12 px-5 py-12 md:px-8 md:py-16">
       <section className="py-2 md:py-4">
