@@ -1,10 +1,11 @@
-import Hero from "@/components/Hero";
-import SkillCard from "@/components/SkillCard";
-import ProyekCard from "@/components/ProyekCard-temp";
 import Link from "next/link";
-import { keahlian } from "@/data/keahlian";
+import Hero from "@/components/Hero";
+import ProyekCard from "@/components/ProyekCard";
+import SkillCard from "@/components/SkillCard";
+import { buttonVariants } from "@/components/ui/button";
 import { proyek } from "@/data/proyek";
-
+import { keahlian } from "@/data/keahlian";
+  
 export default function Home() {
   return (
     <main className="mx-auto w-full max-w-6xl space-y-12 px-5 py-12 md:px-8 md:py-16">
@@ -16,7 +17,7 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="mb-5 text-2xl font-bold text-utama dark:text-sky-200">
+        <h2 className="mb-5 text-2xl font-bold text-primary">
           Keahlian
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -26,7 +27,7 @@ export default function Home() {
         </div>
         <Link
           href="/keahlian"
-          className="mt-5 inline-flex rounded-lg bg-aksen px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aksen"
+          className="mt-5 inline-flex rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           Lihat semua keahlian
         </Link>
@@ -35,7 +36,7 @@ export default function Home() {
       <section>
         <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h2 className="text-2xl font-bold text-utama dark:text-sky-200">
+            <h2 className="text-2xl font-bold text-primary">
               Proyek Terbaru
             </h2>
             <p className="mt-2 text-slate-600 dark:text-gray-300">
@@ -48,12 +49,10 @@ export default function Home() {
             <ProyekCard key={item.slug} proyek={item} />
           ))}
         </div>
-        <Link
-          href="/proyek"
-          className="mt-5 inline-flex rounded-lg bg-aksen px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aksen"
-        >
-          Lihat semua proyek
-        </Link>
+       <Link href="/proyek" className={buttonVariants({ size: "lg",
+             className: "mt-6" })}>
+            Lihat semua proyek
+      </Link>
       </section>
     </main>
   );

@@ -57,7 +57,7 @@ export default function FormKontak() {
       <div>
         <label
           htmlFor="nama"
-          className="block font-semibold text-utama dark:text-sky-200"
+          className="block font-semibold text-primary"
         >
           Nama lengkap
         </label>
@@ -91,7 +91,7 @@ export default function FormKontak() {
       <div>
         <label
           htmlFor="email"
-          className="block font-semibold text-utama dark:text-sky-200"
+          className="block font-semibold text-primary"
         >
           Email
         </label>
@@ -125,7 +125,7 @@ export default function FormKontak() {
       <div>
         <label
           htmlFor="telepon"
-          className="block font-semibold text-utama dark:text-sky-200"
+          className="block font-semibold text-primary"
         >
           Nomor HP
         </label>
@@ -159,7 +159,7 @@ export default function FormKontak() {
       <div>
         <label
           htmlFor="keperluan"
-          className="block font-semibold text-utama dark:text-sky-200"
+          className="block font-semibold text-primary"
         >
           Keperluan
         </label>
@@ -194,7 +194,7 @@ export default function FormKontak() {
       <div>
         <label
           htmlFor="pesan"
-          className="block font-semibold text-utama dark:text-sky-200"
+          className="block font-semibold text-primary"
         >
           Pesan
         </label>
@@ -226,7 +226,7 @@ export default function FormKontak() {
 
       <button
         type="submit"
-        className="rounded-lg bg-aksen px-5 py-3 font-semibold text-white transition-colors hover:bg-red-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aksen"
+        className="rounded-lg bg-primary px-5 py-3 font-semibold text-primary-foreground transition-colors hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
       >
         Kirim Pesan
       </button>
