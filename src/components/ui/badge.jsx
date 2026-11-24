@@ -18,6 +18,12 @@ const badgeVariants = cva(
         ghost:
           "hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50",
         link: "text-primary underline-offset-4 hover:underline",
+        html: "bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-200",
+        css: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-200",
+        javascript: "bg-yellow-100 text-yellow-800 dark:bg-yellow-950 dark:text-yellow-200",
+        codepen: "bg-pink-100 text-pink-800 dark:bg-pink-950 dark:text-pink-200",
+        responsive: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200",
+        nextjs: "bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100",
       },
     },
     defaultVariants: {
